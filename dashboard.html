@@ -10,7 +10,7 @@
 </head>
 <body>
    <div class="nav-bar">
-        <p>Fullname: <span id="userFullname"></span> <p>Role: <span id="userRole"></span> <p>Last-Login <span id="lastLoginTime"></span></p></p></p>
+        <p><i class="bi bi-person-fill"></i> User: <span id="userFullname"></span> <p>Role: <span id="userRole"></span> <p><i class="bi bi-stopwatch-fill"></i> Last-Login <span id="lastLoginTime"></span></p></p></p>
    </div>
    <div class="header">
         <div class="logo-area">
@@ -27,6 +27,28 @@
         <div class="menu-toggle-area">
             <p id="showMenu"><i class="bi bi-three-dots"></i></p>
             <p id="hideMenu"><i class="bi bi-three-dots-vertical"></i></p>
+        </div>
+   </div>
+   <div class="menu-zord">
+        <div class="item">
+            <h2><i class="bi bi-box"></i></h2>
+            <h3 id="totalProduct">0</h3>
+            <h3>Total Product</h3>
+        </div>
+        <div class="item">
+            <h2><i class="bi bi-cart3"></i></h2>
+            <h3 id="dailySales">₦0.00</h3>
+            <h3>Daily Sales</h3>
+        </div>
+        <div class="item">
+            <h2><i class="bi bi-credit-card"></i></h2>
+            <h3 id="dailyExpenses">₦0.00</h3>
+            <h3>Daily Expenses</h3>
+        </div>
+        <div class="item">
+            <h2><i class="bi bi-bank"></i></h2>
+            <h3 id="confirmedBank">₦0.00</h3>
+            <h3>Confirmed Bank</h3>
         </div>
    </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
