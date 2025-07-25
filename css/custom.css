@@ -144,7 +144,7 @@
     margin: 5px 6px;
     font-weight: 650;
     border-radius: 1rem;
-    padding: 5px 8px;
+    padding: 7px 10px;
   }
   .header .list-area a:hover{
     background-color: rgb(1, 24, 46);
@@ -169,6 +169,7 @@
   #hideMenu{
     display: none;
   }
+  
 @media screen and (max-width: 880px) {
   .nav-bar{
     justify-content: center;

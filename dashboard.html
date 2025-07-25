@@ -21,7 +21,7 @@
     padding: 20px;
     margin-left: -5px;
     text-align: center;
-    width: 260px;
+    width: 250px;
 }
 .menu-zord .item h3{
     text-transform: uppercase;
@@ -218,6 +218,41 @@ table {
             margin-left: -7px;
             font-weight: 600;
         }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            margin-top: 5px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content a{
+            border-radius: 1px;
+        }
+        
+
 @media screen and (max-width: 565px) {
     .tabs-menu{
         display: block;
@@ -274,6 +309,7 @@ footer p{
     font-weight: 600;
     margin: 3px;
 }
+
 </style>
 <body>
    <div class="nav-bar">
@@ -285,9 +321,45 @@ footer p{
         </div>
         <div class="list-area" id="list-area">
             <a href="dashboard.html" class="active"><i class="bi bi-houses-fill"></i> Dashboard</a>
-            <a href="#"><i class="bi bi-box"></i> Product</a>
+           
+             <div class="dropdown">
+        <a href="#" class="dropdown-btn">
+            <i class="bi bi-box-seam"></i>
+            Inventory Management
+        </a>
+        <div class="dropdown-content">
+             <a href="#"><i class="bi bi-box"></i> Product</a>
             <a href="#"><i class="bi bi-cart-plus"></i> Stock In</a>
             <a href="#"><i class="bi bi-cart-dash"></i> Stock Adjustment</a>
+        </div>
+    </div>
+
+                 <div class="dropdown">
+        <a href="#" class="dropdown-btn">
+            <i class="bi bi-bank3"></i>
+            Banking
+        </a>
+        <div class="dropdown-content">
+             <a href="#"><i class="bi bi-box"></i> Bank Account</a>
+            <a href="#"><i class="bi bi-cart-plus"></i> Note Adjustment</a>
+            <a href="#"><i class="bi bi-cart-dash"></i> Cash Payment</a>
+        </div>
+    </div>
+
+                 <div class="dropdown">
+        <a href="#" class="dropdown-btn">
+            <i class="bi bi-box-seam"></i>
+             Registration
+        </a>
+        <div class="dropdown-content">
+            <a href="#">Customer Setup</a>
+            <a href="#">Bank Setup</a>
+            <a href="#">Expenses Setup</a>
+            <a href="#">Supplier Setup</a>
+            <a href="#">Store Setup</a>
+            <a href="#">Employee Setup</a>
+        </div>
+    </div>
             <a href="#"><i class="bi bi-cloud-haze2-fill"></i> Report</a>
             <a href="logout.html"><i class="bi bi-toggle-off"></i> Log Out</a>
         </div>
@@ -666,5 +738,16 @@ footer p{
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/custom.js"></script>
     <script src="js/dashboard.js"></script>
+        <script>
+        // Optional: Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(dropdown => {
+                if (!dropdown.contains(event.target)) {
+                    dropdown.querySelector('.dropdown-content').style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
