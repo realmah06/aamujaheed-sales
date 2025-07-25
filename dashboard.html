@@ -138,6 +138,12 @@
 .tab-content {
     display: none;
 }     
+.tab-content .subject{
+    padding: 7px 15px;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 5px;
+}
 .tab-content.active {
     display: block;
 }
@@ -292,6 +298,11 @@ table {
             margin-left: -7px;
             font-weight: 600;
         }
+
+
+        .tab-content h2{
+    background-color: red;
+}
         
 
 @media screen and (max-width: 565px) {
@@ -449,7 +460,7 @@ footer p{
     </div>
     <div class="tabs-contents">
         <div class="tab-content" id="settings">dd</div>
-        <div class="tab-content active" id="dashboard">
+        <div class="tab-content" id="dashboard">
             <div class="row">
                 <div class="category">
                     <div class="category-header">
@@ -551,7 +562,9 @@ footer p{
             </div>
         </div>
         <div class="tab-content" id="sales">
+            <div class="subject" style="background-color: #1e4d4d;">
             <h3>Sales History on <span class="current-date"></span></h3>
+            </div>
             <input type="search" name="search-sales-history" id="search-sales-history" placeholder="Search Sales...">
             <div class="invoices-history">
                 <table id="sales-history">
@@ -625,7 +638,9 @@ footer p{
             </div>
         </div>
         <div class="tab-content" id="banking">
+            <div class="subject" style="background-color: darkgreen;">
             <h3>Bank Transactions on <span class="current-date"></span></h3>
+            </div>
             <input type="search" name="search-bank-history" id="search-bank-history" class="searcher" placeholder="Search Bank Transactions...">
             <div class="banking-history historical">
                 <table id="banking-history">
@@ -756,9 +771,10 @@ footer p{
                 </table>
             </div>
         </div>
-        <div class="tab-content" id="inventory">
-            <h2>Inventory Content</h2>
-            <p>This is the inventory section.</p>
+        <div class="tab-content active" id="inventory">
+            <div class="subject" style="background-color: #123542;">
+                <h3>Inventory Balances on <span class="current-date"></span></h3>
+            </div>
         </div>
     </div>
    </div>
