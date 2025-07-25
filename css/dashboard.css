@@ -138,6 +138,11 @@
     overflow: scroll;
     scrollbar-width: none;
 }
+.grand td{
+    text-align: left;
+    font-size: 14px;
+    font-weight: 650;
+}
 table {
             width: 100%;
             border-collapse: collapse;
@@ -157,9 +162,6 @@ table {
         td{
             font-weight: 550;
             font-size: 12px;
-        }
-        tr:nth-child(even) {
-            background-color: #e6e3e3;
         }
         tr:hover {
             background-color: #fafafa;
