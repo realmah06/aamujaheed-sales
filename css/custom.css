@@ -150,6 +150,11 @@
     color: #fff;
     transition: 0.5s;
   }
+  .header .list-area .active{
+    background-color: rgb(1, 24, 46);
+    color: #fff;
+    transition: 0.5s;
+  }
   .menu-toggle-area{
     padding: 5px;
     margin-right: 15px;
@@ -174,9 +179,10 @@
     display: none;
     top: 65px;
     max-height: 300px;
+    background-color: #fff;
     border-bottom: 1px solid #ddd;
     overflow: scroll;
-    width: 98.5%;
+    width: 98%;
     scrollbar-width: none;
     position: absolute;
   }
