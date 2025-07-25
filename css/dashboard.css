@@ -48,10 +48,8 @@
     background-color: #f7f9fa;
 }   
 .tabs-contents {
-    margin-top: 20px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    margin-top: 15px;
+    padding: 7px;
 }     
 .tab-content {
     display: none;
@@ -59,11 +57,61 @@
 .tab-content.active {
     display: block;
 }
+.row{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.row .category{
+    width: 48%;
+    margin: 8px;
+    display: inline-block;
+} .row .category h3{
+    margin: 5px;
+}
+.row .category input{
+    padding: 8px 12px;
+    border: 1px solid #aaa;
+    width: 100%;
+    outline: none;
+}
+.row .category ul{
+    height: 300px;
+    overflow: scroll;
+}
+.acid{
+    width: 48%;
+}
+.acid .acid-header{
+    font-size: 14px;
+    font-weight: 650;
+    padding: 10px 15px;
+}
+.acid .acid-content{
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+.acid-content h3{
+    font-size: 17px;
+    margin: 5px;
+}
 @media screen and (max-width: 565px) {
     .tabs-menu{
         display: block;
     }
     .tabs-menu .tab{
         width: 95%;
+    }
+}
+@media screen and (max-width: 880px) {
+    .row{
+        display: block;
+    }
+    .row .category, .acid{
+        display: block;
+        width: 98%;
+    }
+    .acid{
+        margin-bottom: 10px;
     }
 }

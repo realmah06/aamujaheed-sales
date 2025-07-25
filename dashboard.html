@@ -78,8 +78,61 @@
     </div>
     <div class="tabs-contents">
         <div class="tab-content active" id="dashboard">
-            <h2>Dashboard Content</h2>
-            <p>This is the dashboard section.</p>
+            <div class="row">
+                <div class="category">
+                    <h3>Customer Balances on <span class="current-date"></span> </h3>
+                    <input type="search" name="search-customers" id="search-customers" placeholder="Search Customers...">
+                    <ul class="balances" id="customers-balances-display"></ul>
+                </div>
+                 <div class="category">
+                    <h3>Banks Balances on <span class="current-date"></span> </h3>
+                    <input type="search" name="search-banks" id="search-banks" placeholder="Search Banks...">
+                    <ul class="balances" id="banks-balances-display"></ul>
+                </div>
+            </div>
+            <hr style="border: 1px solid darkgreen;">
+             <div class="row">
+                <div class="category">
+                    <h3>Expenses Balances on <span class="current-date"></span> </h3>
+                    <input type="search" name="search-expesnes" id="search-expesnes" placeholder="Search Expenses...">
+                    <ul class="balances" id="expenses-balances-display"></ul>
+                </div>
+                 <div class="category">
+                    <h3>Supplier Balances on <span class="current-date"></span> </h3>
+                    <input type="search" name="search-supplier" id="search-supplier" placeholder="Search Suppliers...">
+                    <ul class="balances" id="supplier-balances-display"></ul>
+                </div>
+            </div>
+            <hr style="border: 1px solid darkgreen;">
+            <br>
+            <div class="row">
+                <div class="acid" style="border: 1px solid rgb(217, 231, 217);">
+                    <div class="acid-header" style="background-color: rgb(217, 231, 217);">
+                        Total Credit Balances as at <span class="current-date"></span>
+                    </div>
+                    <div class="acid-content">
+                        <br>
+                        <h3>Total Customer Balances <span style="color: green;" id="total-customer-credit-balances">[₦0.00]</span> | <span style="color: darkred;" id="total-customer-debit-balances">[₦0.00]</span></h3>
+                        <h3>Total Banks Balances <span style="color: green;" id="total-bank-credit-balances">[₦0.00]</span> | <span style="color: darkred;" id="total-banks-debit-balances">[₦0.00]</span></h3>
+                        <h3>Total Expenses Balances <span style="color: green;" id="total-expenses-credit-balances">[₦0.00]</span> | <span style="color: darkred;" id="total-expesnes-debit-balances">[₦0.00]</span></h3>
+                        <h3>Total Supplier Balances <span style="color: green;" id="total-supplier-credit-balances">[₦0.00]</span> | <span style="color: darkred;" id="total-supplier-debit-balances">[₦0.00]</span></h3>
+                        <h3>Total Store Balances <span style="color: green;" id="total-store-credit-balances">[₦0.00]</span> | <span style="color: darkred;" id="total-store-debit-balances">[₦0.00]</span></h3>
+                    </div>
+                </div>
+
+                 <div class="acid" style="border: 1px solid rgb(231, 217, 217);">
+                    <div class="acid-header" style="background-color: rgb(231, 217, 217);">
+                        Total Debit Balances as at <span class="current-date"></span>
+                    </div>
+                    <div class="acid-content">
+                        <br>
+                        <h2 style="color: green;">Total Credit <span style="color: green;" id="total-credit-balances">₦0.00</span></h2>
+                        <h2 style="color: red;">Total Debit <span style="color: red;" id="total-debit-balances"></span></h2>
+                        <br>
+                        <h1>Margin <span id="totalCredit-totalDebit=">₦0.00</span></h1>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="tab-content" id="sales">
             <h2>Sales History Content</h2>

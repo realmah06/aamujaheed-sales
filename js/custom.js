@@ -12,3 +12,20 @@ hideMenu.onclick = function(){
     showMenu.style.display = "block";
     hideMenu.style.display = "none";
 }
+
+ // Function to format the date as DD/MM/YYYY
+        function formatDate(date) {
+            const day = String(date.getDate()).padStart(2, '0');
+            const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed
+            const year = date.getFullYear();
+            return `${day}/${month}/${year}`;
+        }
+
+        // Get current date
+        const today = new Date();
+        const formattedDate = formatDate(today);
+
+        // Insert the date into all spans with class "current-date"
+        document.querySelectorAll('.current-date').forEach(span => {
+            span.textContent = formattedDate;
+        });
