@@ -118,6 +118,7 @@
   }
   .header{
     top: 0;
+    width: 100%;
     position: sticky;
     display: flex;
     justify-content: space-around;
@@ -171,6 +172,19 @@
   }
   .list-area{
     display: none;
+    top: 65px;
+    max-height: 300px;
+    border-bottom: 1px solid #ddd;
+    overflow: scroll;
+    width: 98.5%;
+    scrollbar-width: none;
+    position: absolute;
+  }
+  .header .list-area a{
+    display: block;
+    border-radius: 0;
+    padding: 9px 12px;
+    margin: 0;
   }
   #showMenu{
     display: block;
