@@ -142,7 +142,7 @@
     margin: 5px;
     cursor: pointer;
 }
-.invoices-history{
+.invoices-history, .historical{
     padding: 10px;
     margin: 10px;
     margin-left: -7px;
@@ -157,6 +157,9 @@
     text-align: right;
     font-size: 14px;
     font-weight: 650;
+}
+table strong{
+    font-weight: 700;
 }
 table {
             width: 100%;
@@ -176,7 +179,7 @@ table {
             padding: 10px;
         }
         td{
-            font-weight: 550;
+            font-weight: 500;
             font-size: 14px;
             border-right: 1px solid #aaa;
             border-left: 1px solid #aaa;
@@ -204,7 +207,7 @@ table {
             transition: 0.5s;
             color: darkred;
         }
-        #search-sales-history{
+        #search-sales-history, .searcher{
             padding: 8px 12px;
             border: 1px solid #ddd;
             outline: none;
@@ -339,7 +342,7 @@ footer p{
         </div>
     </div>
     <div class="tabs-contents">
-        <div class="tab-content active" id="dashboard">
+        <div class="tab-content" id="dashboard">
             <div class="row">
                 <div class="category">
                     <div class="category-header">
@@ -466,15 +469,35 @@ footer p{
                         <!-- Sample Invoice History -->
                         <!-- <tr>
                             <td>01</td>
-                            <td>INV001</td>
+                            <td>#INV001</td>
                             <td class="current-date"></td>
                             <td>Sani Umaru</td>
+                            <td>Surajo Bello</td>
+                            <td>Zaria</td>
+                            <td>PZ Shop 2</td>
                             <td>Indorama Urea</td>
-                            <td>72 bags</td>
+                            <td>72</td>
                             <td>₦46,500</td>
-                            <td>₦3,348,000</td>
-                            <td>Credit Sales</td>
+                            <td>₦10,000</td>
+                            <td>₦3,338,000</td>
+                            <td style="color: rgb(116, 77, 5);">Credit Sales</td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>#INV002</td>
+                            <td class="current-date"></td>
+                            <td>Customer Sales</td>
+                            <td>Surajo Bello</td>
+                            <td>Zaria</td>
+                            <td>PZ Shop 2</td>
+                            <td>Npk-G Dap</td>
+                            <td>26</td>
+                            <td>₦81,000</td>
+                            <td>₦0</td>
+                            <td>₦2,106,000</td>
+                            <td style="color: green;">Paid Sales</td>
                         </tr> -->
+                        
                         <tr>
                             <td colspan="12" class="table-no-data">No Sales Transaction on this Date<br></td>
                         </tr>
@@ -494,9 +517,137 @@ footer p{
                 </table>
             </div>
         </div>
-        <div class="tab-content" id="banking">
-            <h2>Banking Contents</h2>
-            <p>This is the banking section.</p>
+        <div class="tab-content active" id="banking">
+            <h3>Bank Transactions on <span class="current-date"></span></h3>
+            <input type="search" name="search-bank-history" id="search-bank-history" class="searcher" placeholder="Search Bank Transactions...">
+            <div class="banking-history historical">
+                <table id="banking-history">
+                    <thead>
+                        <tr>
+                            <th>SNo</th>
+                            <th>BankingID</th>
+                            <th>Date</th>
+                            <th>PostedBy</th>
+                            <th>Description</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Sample Bank Transactions -->
+                        <!-- <tr>
+                            <td>01</td>
+                            <td>BNKT001</td>
+                            <td class="current-date"></td>
+                            <td>Surajo Bello</td>
+                            <td style="text-align: left;"><strong>Payment from Client:</strong> through Bank Account. Dr from <strong>Client</strong> Sani Abubakar Account to Moniepoint MFB <small><em>(AA MUJAHEED GLOBAL ENTERPRISES Account)</em></small> Account Cr. Desc: Sani Abubakar</td>
+                            <td>₦3,348,000</td>
+                        </tr> -->
+                        <tr>
+                            <td colspan="6" class="table-no-data">No Bank Transactions on this Date<br></td>
+                        </tr>
+                        <tr class="grand">
+                            <td colspan="5">Total Payment from</td>
+                            <td colspan="1" id="daily-total-paid-sales" style="color: green;">₦0.00</td>
+                        </tr>
+                        <tr class="grand">
+                             <td colspan="5">Total Payment to</td>
+                             <td colspan="1" id="daily-total-credit-sales" style="color: red;">₦0.00</td>
+                        </tr>
+                        <tr class="grand">
+                            <td colspan="5">Grand Total</td>
+                            <td colspan="3" id="grand-total">₦0.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br><br>
+            <h3>Credit & Debit Note Transactions on <span class="current-date"></span></h3>
+            <input type="search" name="search-adjustment-history" id="search-adjustment-history" class="searcher" placeholder="Search Adjustment Transactions...">
+            <div class="adjustment-history historical">
+                <table id="adjustment-history">
+                    <thead>
+                        <tr>
+                            <th>SNo</th>
+                            <th>AdjustID</th>
+                            <th>Date</th>
+                            <th>PostedBy</th>
+                            <th>Reason</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Sample Adjustment Transactions -->
+                        <!-- <tr>
+                            <td>01</td>
+                            <td>ADJ001</td>
+                            <td class="current-date"></td>
+                            <td>Surajo Bello</td>
+                            <td style="text-align: left;"><strong>Debit Note Adjustment</strong> to <strong>Expenses</strong> Shop Expenses due to Reject Cash.</td>
+                            <td>₦8,000</td>
+                        </tr> -->
+                        <tr>
+                            <td colspan="6" class="table-no-data">No Adjustment Transactions on this Date<br></td>
+                        </tr>
+                        <tr class="grand">
+                            <td colspan="5">Total Credit Note</td>
+                            <td colspan="1" id="daily-total-paid-sales" style="color: green;">₦0.00</td>
+                        </tr>
+                        <tr class="grand">
+                             <td colspan="5">Total Debit Note</td>
+                             <td colspan="1" id="daily-total-credit-sales" style="color: red;">₦0.00</td>
+                        </tr>
+                        <tr class="grand">
+                            <td colspan="5">Grand Total</td>
+                            <td colspan="3" id="grand-total">₦0.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br><br>
+             <h3>Cash Payment Transactions on <span class="current-date"></span></h3>
+            <input type="search" name="search-cash-payment-history" id="search-cash-payment-history" class="searcher" placeholder="Search Cash Payment Transactions...">
+            <div class="cash-payment-history historical">
+                <table id="cash-payment-history">
+                    <thead>
+                        <tr>
+                            <th>SNo</th>
+                            <th>CshID</th>
+                            <th>Date</th>
+                            <th>PostedBy</th>
+                            <th>Client</th>
+                            <th>Description</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Sample Cash Payment Transactions -->
+                        <!-- <tr>
+                            <td>01</td>
+                            <td>CHS001</td>
+                            <td class="current-date"></td>
+                            <td>Surajo Bello</td>
+                            <td>Branch Expenses</td>
+                            <td style="text-align: left;"><strong>Cash Payment to</strong> Umar Muhammad /Gyeran Kofa.</td>
+                            <td>₦13,500</td>
+                        </tr> -->
+                        <tr>
+                            <td colspan="7" class="table-no-data">No Cash Payment Transactions on this Date<br></td>
+                        </tr>
+                        <tr class="grand">
+                            <td colspan="6">Total Cash From</td>
+                            <td colspan="1" id="daily-total-paid-sales" style="color: green;">₦0.00</td>
+                        </tr>
+                        <tr class="grand">
+                             <td colspan="6">Total Cash To</td>
+                             <td colspan="1" id="daily-total-credit-sales" style="color: red;">₦0.00</td>
+                        </tr>
+                        <tr class="grand">
+                            <td colspan="6">Grand Total</td>
+                            <td colspan="1" id="grand-total">₦0.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
         <div class="tab-content" id="inventory">
             <h2>Inventory Content</h2>
