@@ -136,10 +136,11 @@
   .header .list-area a{
     text-decoration: none;
     color: #000;
-    font-size: 13px;
+    font-size: 15px;
+    margin: 5px 6px;
     font-weight: 550;
     border-radius: 1rem;
-    padding: 6px 12px;
+    padding: 5px 8px;
   }
   .header .list-area a:hover{
     background-color: rgb(1, 24, 46);
