@@ -8,6 +8,7 @@
 .menu-zord .item{
     display: inline-block;
     padding: 20px;
+    margin-left: -5px;
     text-align: center;
     width: 260px;
 }
