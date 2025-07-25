@@ -77,29 +77,73 @@
         </div>
     </div>
     <div class="tabs-contents">
-        <div class="tab-content active" id="dashboard">
+        <div class="tab-content" id="dashboard">
             <div class="row">
                 <div class="category">
-                    <h3>Customer Balances on <span class="current-date"></span> </h3>
+                    <div class="category-header">
+                     <h3>Customer's Accounts <!-- Balances on <span class="current-date"></span>--> </h3> 
+                     <button><i class="bi bi-person-plus"></i> Add Customer</button>
+                    </div>
+                    <div class="roll">
                     <input type="search" name="search-customers" id="search-customers" placeholder="Search Customers...">
+                    <select name="filter-type" id="filter-type">
+                        <option value="" disabled> <i class="bi bi-filter"></i> Filter</option>
+                        <option value="All Filters">All Filters</option>
+                        <option value="Credit Balances">Credit Balances</option>
+                        <option value="Debit Balances">Debit Balances</option>
+                    </select>
+                    </div>
                     <ul class="balances" id="customers-balances-display"></ul>
                 </div>
                  <div class="category">
-                    <h3>Banks Balances on <span class="current-date"></span> </h3>
+                    <div class="category-header">
+                     <h3>Bank Accounts <!-- Balances on <span class="current-date"></span>--> </h3> 
+                     <button><i class="bi bi-person-plus"></i> Add Bank</button>
+                    </div>
+                    <div class="roll">
                     <input type="search" name="search-banks" id="search-banks" placeholder="Search Banks...">
+                    <select name="filter-type" id="filter-type">
+                        <option value="" disabled> <i class="bi bi-filter"></i> Filter</option>
+                        <option value="All Filters">All Filters</option>
+                        <option value="Credit Balances">Credit Balances</option>
+                        <option value="Debit Balances">Debit Balances</option>
+                    </select>
+                    </div>
                     <ul class="balances" id="banks-balances-display"></ul>
                 </div>
             </div>
             <hr style="border: 1px solid darkgreen;">
              <div class="row">
                 <div class="category">
-                    <h3>Expenses Balances on <span class="current-date"></span> </h3>
-                    <input type="search" name="search-expesnes" id="search-expesnes" placeholder="Search Expenses...">
+                    <div class="category-header">
+                     <h3>Expenses Accounts <!-- Balances on <span class="current-date"></span>--> </h3> 
+                     <button><i class="bi bi-person-plus"></i> Add Expenses</button>
+                    </div>
+                    <div class="roll">
+                    <input type="search" name="search-expenses" id="search-expenses" placeholder="Search Expenses...">
+                    <select name="filter-type" id="filter-type">
+                        <option value="" disabled> <i class="bi bi-filter"></i> Filter</option>
+                        <option value="All Filters">All Filters</option>
+                        <option value="Credit Balances">Credit Balances</option>
+                        <option value="Debit Balances">Debit Balances</option>
+                    </select>
+                    </div>
                     <ul class="balances" id="expenses-balances-display"></ul>
                 </div>
                  <div class="category">
-                    <h3>Supplier Balances on <span class="current-date"></span> </h3>
+                    <div class="category-header">
+                     <h3>Supplier's Accounts <!-- Balances on <span class="current-date"></span>--> </h3> 
+                     <button><i class="bi bi-person-plus"></i> Add Supplier</button>
+                    </div>
+                    <div class="roll">
                     <input type="search" name="search-supplier" id="search-supplier" placeholder="Search Suppliers...">
+                    <select name="filter-type" id="filter-type">
+                        <option value="" disabled> <i class="bi bi-filter"></i> Filter</option>
+                        <option value="All Filters">All Filters</option>
+                        <option value="Credit Balances">Credit Balances</option>
+                        <option value="Debit Balances">Debit Balances</option>
+                    </select>
+                    </div>
                     <ul class="balances" id="supplier-balances-display"></ul>
                 </div>
             </div>
@@ -121,7 +165,7 @@
                 </div>
 
                  <div class="acid" style="border: 1px solid rgb(231, 217, 217);">
-                    <div class="acid-header" style="background-color: rgb(231, 217, 217);">
+                    <div class="acid-header" style="background-color: rgb(235, 192, 192);">
                         Total Debit Balances as at <span class="current-date"></span>
                     </div>
                     <div class="acid-content">
@@ -134,9 +178,42 @@
                 </div>
             </div>
         </div>
-        <div class="tab-content" id="sales">
-            <h2>Sales History Content</h2>
-            <p>This is the sales history section.</p>
+        <div class="tab-content active" id="sales">
+            <h3>Sales History on <span class="current-date"></span></h3>
+            <div class="invoices-history">
+                <table id="sales-history">
+                    <thead>
+                        <tr>
+                            <th>S/No</th>
+                            <th>#</th>
+                            <th>Date</th>
+                            <th>Customer</th>
+                            <th>Product</th>
+                            <th>Qty</th>
+                            <th>Unit Price</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Sample Invoice History -->
+                        <!-- <tr>
+                            <td>01</td>
+                            <td>INV001</td>
+                            <td class="current-date"></td>
+                            <td>Sani Umaru</td>
+                            <td>Indorama Urea</td>
+                            <td>72 bags</td>
+                            <td>46,500</td>
+                            <td>3,348,000</td>
+                            <td>Credit</td>
+                        </tr> -->
+                        <tr>
+                            <td colspan="9" class="table-no-data">No Sales Transaction on this Date</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
         <div class="tab-content" id="banking">
             <h2>Banking Content</h2>
