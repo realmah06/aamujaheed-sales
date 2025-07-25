@@ -56,8 +56,11 @@
 }
 .tab.active {
     border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f7f9fa;
+    /* border-radius: 5px; */
+    /* background-color: #f7f9fa; */
+    border-top-left-radius: 5px;
+    color: darkred;
+    border-top-right-radius: 5px;
 }   
 .tabs-contents {
     margin-top: 15px;
@@ -151,7 +154,7 @@
     scrollbar-width: none;
 }
 .grand td{
-    text-align: left;
+    text-align: right;
     font-size: 14px;
     font-weight: 650;
 }
@@ -168,18 +171,19 @@ table {
             font-size: 14px;
         }
         th {
-            font-weight: bold;
+            font-weight: 650;
             font-size: 14px;
+            padding: 10px;
         }
         td{
             font-weight: 550;
-            font-size: 15px;
+            font-size: 14px;
             border-right: 1px solid #aaa;
             border-left: 1px solid #aaa;
         }
     th{
             
-            font-size: 17px;
+            font-size: 14px;
             border-right: 1px solid #aaa;
             border-left: 1px solid #aaa;
         border-top: 1px solid #aaa;
@@ -188,7 +192,7 @@ table {
             background-color: #fafafa;
         }
         .table-no-data{
-            padding: 10px;
+            padding: 25px 30px;
             border: 1px solid #eee;
             font-size: 20px;
             font-weight: bold;
@@ -452,6 +456,7 @@ footer p{
                             <th>Product</th>
                             <th>Qty</th>
                             <th>Price</th>
+                            <th>Discount</th>
                             <th>Total</th>
                             <th>Status</th>
                         </tr>
@@ -470,19 +475,19 @@ footer p{
                             <td>Credit Sales</td>
                         </tr> -->
                         <tr>
-                            <td colspan="12" class="table-no-data"><br>No Sales Transaction on this Date<br><br></td>
+                            <td colspan="12" class="table-no-data">No Sales Transaction on this Date<br></td>
                         </tr>
                         <tr class="grand">
-                            <td colspan="8">Total Paid Sales</td>
-                            <td colspan="4" id="daily-total-paid-sales" style="color: green;">₦0.00</td>
+                            <td colspan="9">Total Paid Sales</td>
+                            <td colspan="3" id="daily-total-paid-sales" style="color: green;">₦0.00</td>
                         </tr>
                         <tr class="grand">
-                             <td colspan="8">Total Credit Sales</td>
-                             <td colspan="4" id="daily-total-credit-sales" style="color: red;">₦0.00</td>
+                             <td colspan="9">Total Credit Sales</td>
+                             <td colspan="3" id="daily-total-credit-sales" style="color: red;">₦0.00</td>
                         </tr>
                         <tr class="grand">
-                            <td colspan="8">Grand Total Sales</td>
-                            <td colspan="4" id="paidPlusCreditSales">₦0.00</td>
+                            <td colspan="9">Grand Total Sales</td>
+                            <td colspan="3" id="paidPlusCreditSales">₦0.00</td>
                         </tr>
                     </tbody>
                 </table>
