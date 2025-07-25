@@ -9,6 +9,71 @@
     <link rel="stylesheet" href="css/dashboard.css">
 </head>
 <style>
+    .nav-bar{
+    background-color: rgb(110, 2, 2);
+    mix-blend-mode: difference;
+    color: #fff;
+    display: flex;
+  }
+  .nav-bar p{
+    font-size: 15px;
+    padding: 5px 12px;
+  }
+  .header{
+    top: 0;
+    width: 100%;
+    position: sticky;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+  }
+  .header .logo-area{
+    padding: 5px;
+    margin-left: 15px;
+  }
+  .header .logo-area img{
+    height: 50px;
+    width: 80px;
+  }
+  .header .list-area{ 
+    padding: 5px;
+  }
+  .header .list-area a{
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    margin: 5px 6px;
+    font-weight: 650;
+    border-radius: 1rem;
+    padding: 7px 10px;
+  }
+  .header .list-area a:hover{
+    background-color: rgb(1, 24, 46);
+    color: #fff;
+    transition: 0.5s;
+  }
+  .header .list-area .active{
+    background-color: rgb(1, 24, 46);
+    color: #fff;
+    transition: 0.5s;
+  }
+  .menu-toggle-area{
+    padding: 5px;
+    margin-right: 15px;
+    cursor: pointer;
+    font-size: 25px;
+    
+  }
+  #showMenu{
+    display: none;
+  }
+  #hideMenu{
+    display: none;
+  }
+  
+
     .menu-zord{
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
     color: white;
@@ -219,39 +284,6 @@ table {
             margin-left: -7px;
             font-weight: 600;
         }
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #fff;
-            min-width: 200px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            margin-top: 5px;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-        
-        .dropdown-content a {
-            color: #333;
-            padding: 12px 16px;
-            text-decoration: none;
-            border-radius: 0;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        .dropdown-content a{
-            border-radius: 1px;
-        }
         
 
 @media screen and (max-width: 565px) {
@@ -293,6 +325,34 @@ table {
         margin-left: -15px;
     }
 }
+@media screen and (max-width: 880px) {
+  .nav-bar{
+    justify-content: center;
+  }
+  .header{
+    justify-content: space-between;
+  }
+  .list-area{
+    display: none;
+    top: 65px;
+    max-height: 300px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    overflow: scroll;
+    width: 98%;
+    scrollbar-width: none;
+    position: absolute;
+  }
+  .header .list-area a{
+    display: block;
+    border-radius: 0;
+    padding: 9px 12px;
+    margin: 0;
+  }
+  #showMenu{
+    display: block;
+  }
+}
 footer{
     background-color: #2d2d2d;
     bottom: 0;
@@ -323,44 +383,11 @@ footer p{
         <div class="list-area" id="list-area">
             <a href="dashboard.html" class="active"><i class="bi bi-houses-fill"></i> Dashboard</a>
            
-             <div class="dropdown">
-        <a href="#" class="dropdown-btn">
-            <i class="bi bi-box-seam"></i>
-            Inventory Management
-        </a>
-        <div class="dropdown-content">
-             <a href="#"><i class="bi bi-box"></i> Product</a>
-            <a href="#"><i class="bi bi-cart-plus"></i> Stock In</a>
-            <a href="#"><i class="bi bi-cart-dash"></i> Stock Adjustment</a>
-        </div>
-    </div>
+             
 
-                 <div class="dropdown">
-        <a href="#" class="dropdown-btn">
-            <i class="bi bi-bank"></i>
-            Banking
-        </a>
-        <div class="dropdown-content">
-             <a href="#"><i class="bi bi-bank"></i> Bank Account</a>
-            <a href="#"><i class="bi bi-cart-plus"></i> Note Adjustment</a>
-            <a href="#"><i class="bi bi-cart-dash"></i> Cash Payment</a>
-        </div>
-    </div>
+                 
 
-                 <div class="dropdown">
-        <a href="#" class="dropdown-btn">
-            <i class="bi bi-box-seam"></i>
-             Registration
-        </a>
-        <div class="dropdown-content">
-            <a href="#">Customer Setup</a>
-            <a href="#">Bank Setup</a>
-            <a href="#">Expenses Setup</a>
-            <a href="#">Supplier Setup</a>
-            <a href="#">Store Setup</a>
-            <a href="#">Employee Setup</a>
-        </div>
-    </div>
+                 
             <a href="#"><i class="bi bi-cloud-haze2-fill"></i> Report</a>
             <a href="logout.html"><i class="bi bi-toggle-off"></i> Log Out</a>
         </div>
@@ -740,15 +767,7 @@ footer p{
     <script src="js/custom.js"></script>
     <script src="js/dashboard.js"></script>
         <script>
-        // Optional: Close dropdown when clicking outside
-        document.addEventListener('click', function(event) {
-            const dropdowns = document.querySelectorAll('.dropdown');
-            dropdowns.forEach(dropdown => {
-                if (!dropdown.contains(event.target)) {
-                    dropdown.querySelector('.dropdown-content').style.display = 'none';
-                }
-            });
-        });
+        
     </script>
 </body>
 </html>
