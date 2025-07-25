@@ -120,6 +120,7 @@
     top: 0;
     width: 100%;
     position: sticky;
+    background-color: #fff;
     display: flex;
     justify-content: space-around;
     align-items: center;
