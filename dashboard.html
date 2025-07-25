@@ -51,8 +51,52 @@
             <h3>Confirmed Bank</h3>
         </div>
    </div>
+   <div class="dashboard">
+    <h2><i class="bi bi-speedometer2"></i> Dashboard</h2>
+    <hr style="border: 1px solid darkgreen;"><br>
+    <div class="tabs-menu">
+        <div class="tab active" data-tab="dashboard">
+            <p>Dashboard</p>
+            <span><i class="bi bi-database"></i></span>
+        </div>
+        <div class="tab" data-tab="sales">
+            <p>Sales History</p>
+            <span><i class="bi bi-archive"></i></span>
+        </div>
+        <div class="tab" data-tab="banking">
+            <p>Banking</p>
+            <span><i class="bi bi-bank"></i></span>
+        </div>
+        <div class="tab" data-tab="inventory">
+            <p>Inventory</p>
+            <span><i class="bi bi-shop"></i></span>
+        </div>
+        <div class="tab refresh-btn">
+            <p>Refresh</p>
+            <span><i class="bi bi-arrow-clockwise"></i></span>
+        </div>
+    </div>
+    <div class="tabs-contents">
+        <div class="tab-content active" id="dashboard">
+            <h2>Dashboard Content</h2>
+            <p>This is the dashboard section.</p>
+        </div>
+        <div class="tab-content" id="sales">
+            <h2>Sales History Content</h2>
+            <p>This is the sales history section.</p>
+        </div>
+        <div class="tab-content" id="banking">
+            <h2>Banking Content</h2>
+            <p>This is the banking section.</p>
+        </div>
+        <div class="tab-content" id="inventory">
+            <h2>Inventory Content</h2>
+            <p>This is the inventory section.</p>
+        </div>
+    </div>
+   </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/custom.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/dashboard.js"></script>
 </body>
 </html>
