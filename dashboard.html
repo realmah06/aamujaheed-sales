@@ -435,10 +435,13 @@ footer p{
                 <table id="sales-history">
                     <thead>
                         <tr>
-                            <th>S/No</th>
-                            <th>#</th>
+                            <th>SNo</th>
+                            <th>InvoiceID</th>
                             <th>Date</th>
                             <th>Customer</th>
+                            <th>Employee</th>
+                            <th>Branch</th>
+                            <th>Store</th>
                             <th>Product</th>
                             <th>Qty</th>
                             <th>Price</th>
@@ -460,19 +463,19 @@ footer p{
                             <td>Credit Sales</td>
                         </tr> -->
                         <tr>
-                            <td colspan="9" class="table-no-data">No Sales Transaction on this Date</td>
+                            <td colspan="12" class="table-no-data"><br>No Sales Transaction on this Date<br></td>
                         </tr>
                         <tr class="grand">
-                            <td colspan="6">Total Paid Sales</td>
-                            <td colspan="3" id="daily-total-paid-sales" style="color: green;">₦0.00</td>
+                            <td colspan="8">Total Paid Sales</td>
+                            <td colspan="4" id="daily-total-paid-sales" style="color: green;">₦0.00</td>
                         </tr>
                         <tr class="grand">
-                             <td colspan="6">Total Credit Sales</td>
-                             <td colspan="3" id="daily-total-credit-sales" style="color: red;">₦0.00</td>
+                             <td colspan="8">Total Credit Sales</td>
+                             <td colspan="4" id="daily-total-credit-sales" style="color: red;">₦0.00</td>
                         </tr>
                         <tr class="grand">
-                            <td colspan="6">Grand Total Sales</td>
-                            <td colspan="3" id="paidPlusCreditSales">₦0.00</td>
+                            <td colspan="8">Grand Total Sales</td>
+                            <td colspan="4" id="paidPlusCreditSales">₦0.00</td>
                         </tr>
                     </tbody>
                 </table>
